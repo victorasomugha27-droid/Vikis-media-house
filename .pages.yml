@@ -1,1 +1,62 @@
-viki-media-house
+media:
+  - name: news_images
+    label: News Images
+    input: media/news
+    output: /media/news
+
+content:
+  - name: news
+    label: News Stories
+    type: file
+    path: news/news.json
+    format: json
+    fields:
+      - name: title
+        label: Headline
+        type: string
+        required: true
+
+      - name: category
+        label: News Category
+        type: select
+        options:
+          values:
+            - World
+            - Nigeria
+            - Africa
+            - Politics
+            - Business
+            - Entertainment
+            - Sports
+            - Technology
+            - Lifestyle
+
+      - name: date
+        label: Publication Date
+        type: date
+
+      - name: excerpt
+        label: News Summary
+        type: text
+
+      - name: image
+        label: News Image
+        type: image
+        options:
+          media: news_images
+
+      - name: source
+        label: News Source
+        type: string
+
+      - name: sourceUrl
+        label: Source Website
+        type: string
+
+      - name: url
+        label: Full Story Link
+        type: string
+
+      - name: featured
+        label: Featured Story
+        type: boolean
