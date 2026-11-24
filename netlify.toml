@@ -1,0 +1,5 @@
+# The website (HTML, CSS, JS, assets) is stored in the repository as a ZIP
+# package. The build extracts it into `dist`, which Netlify then publishes.
+[build]
+  command = "rm -rf dist && unzip -oq vikis_media_house_news_updates.zip -d dist"
+  publish = "dist"
